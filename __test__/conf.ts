@@ -1,5 +1,7 @@
 import { Config, browser } from  'protractor';
 import {TestData} from "./data/DataSet";
+var path = require('path');
+var downloadsPath = path.resolve(__dirname, '../Files');
 
 //export const reportFolderPath = './report/'+ Date.now();
 
@@ -18,7 +20,17 @@ export let config: Config = {
     ],
     capabilities: {
         "browserName": 'chrome',
-        
+        'chromeOptions': {
+            args: ['--no-sandbox', '--test-type=browser'],
+            prefs: {
+              'plugins.always_open_pdf_externally': true,
+              'download': {
+                'prompt_for_download': false,
+                'default_directory': downloadsPath,
+                'directory_upgrade': true
+              }
+            }
+          }
     },
     jasmineNodeOpts: {
         showColors: true,
