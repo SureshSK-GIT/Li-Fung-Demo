@@ -1,0 +1,28 @@
+{
+  "name": "LiFung",
+  "version": "1.0.0",
+  "buildVersion": "1",
+  "engines": {
+    "node": "10.15.3"
+    
+  },
+  "main": "conf.ts",
+  "author": "Indium Software India Pvt Ltd",
+  "scripts": {
+    "pretest": "npm run tsc",
+    "test": "protractor ./dist/conf.js",
+    "tsc": "tsc",
+    "webdriver-update" : "webdriver-manager update"
+  },
+  "dependencies": {
+    "@types/jasmine": "^3.3.7",
+    "@types/jasminewd2": "^2.0.6",
+    "@types/node": "^10.14.4",
+    "fs-extra": "^7.0.1",
+    "jasmine-reporters": "^2.3.2",
+    "protractor": "^5.4.2",
+    "protractor-jasmine2-html-reporter": "^0.0.7",
+    "typescript": "^3.4.1"
+  },
+  "devDependencies": {}
+}
